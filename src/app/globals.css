@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --nav-height: 3.75rem;
+  --cream: #f7f3ec;
+  --ivory: #faf7f2;
+  --beige: #e8dcc8;
+  --beige-soft: #f0e8dc;
+  --beige-btn: #d4c4a8;
+  --sage-pale: #e4ede6;
+  --sage-soft: #d5e2d8;
+  --sage: #5f7d6c;
+  --sage-deep: #3f5c4c;
+  --forest: #2f463c;
+  --forest-muted: #3d5548;
+  --text: #2c3e35;
+  --text-muted: #5a6b60;
+  --border-soft: rgba(63, 92, 76, 0.12);
+  --shadow-soft: 0 8px 30px rgba(47, 70, 60, 0.06);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--cream);
+  --color-ivory: var(--ivory);
+  --color-beige: var(--beige);
+  --color-beige-soft: var(--beige-soft);
+  --color-beige-btn: var(--beige-btn);
+  --color-sage-pale: var(--sage-pale);
+  --color-sage-soft: var(--sage-soft);
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+  --color-forest: var(--forest);
+  --color-forest-muted: var(--forest-muted);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --font-sans: var(--font-cairo);
+  --font-naskh: var(--font-amiri);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cream);
+  color: var(--text);
+  font-family: var(--font-cairo), "Segoe UI", Tahoma, sans-serif;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--sage-soft);
+  color: var(--forest);
+}
+
+:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 3px;
+}
+
+.font-naskh {
+  font-family: var(--font-amiri), "Amiri", "Traditional Arabic", serif;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.45s ease-out;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-toast {
+  animation: toast-in 0.25s ease-out;
 }
