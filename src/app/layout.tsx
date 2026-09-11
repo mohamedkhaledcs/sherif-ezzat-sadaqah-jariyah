@@ -19,7 +19,7 @@ const amiri = Amiri({
 });
 
 export const metadata: Metadata = {
-  title: "صدقة جارية — شريف عزت",
+  title: "صدقه جاريه عن شريف عزت",
   description:
     "صدقة جارية لشريف عزت رحمه الله. اقرأ القرآن وادعُ له، واجعل هذه الصفحة صدقة جارية تصل إليه.",
   applicationName: "صدقة جارية",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "صدقة جارية — شريف عزت",
+    title: "صدقة جارية شريف عزت",
     description:
       "اقرأ آية أو دعاء، وادعُ لشريف عزت رحمه الله، وانشر الصفحة لتعم الفائدة.",
     locale: "ar_AR",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "صدقة جارية — شريف عزت",
+    title: "صدقة جارية شريف عزت",
     description:
       "اقرأ آية أو دعاء، وادعُ لشريف عزت رحمه الله، وانشر الصفحة لتعم الفائدة.",
   },
