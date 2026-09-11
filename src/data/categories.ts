@@ -3,7 +3,8 @@ export type CategoryId =
   | "quran"
   | "dua-quran"
   | "dua-athar"
-  | "dua-general";
+  | "dua-general"
+  | "tasbeeh";
 
 export interface Category {
   id: CategoryId;
@@ -16,4 +17,5 @@ export const categories: Category[] = [
   { id: "dua-quran", label: "أدعية من القرآن" },
   { id: "dua-athar", label: "أدعية مأثورة" },
   { id: "dua-general", label: "أدعية عامة" },
+  { id: "tasbeeh", label: "تسبيح" },
 ];

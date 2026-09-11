@@ -4,13 +4,23 @@ import { useState } from "react";
 import { CategoryTabs } from "@/components/CategoryTabs";
 import { DuaCard } from "@/components/DuaCard";
 import { QuranCard } from "@/components/QuranCard";
+import { TasbeehCard } from "@/components/TasbeehCard";
 import type { CategoryId } from "@/data/categories";
 import { useRandomContent } from "@/hooks/useRandomContent";
 
 export function ContentSection() {
   const [category, setCategory] = useState<CategoryId>("all");
-  const { verse, dua, nextVerse, nextDua, showQuran, showDua } =
-    useRandomContent(category);
+  const {
+    verse,
+    dua,
+    tasbeeh,
+    nextVerse,
+    nextDua,
+    nextTasbeeh,
+    showQuran,
+    showDua,
+    showTasbeeh,
+  } = useRandomContent(category);
 
   const both = showQuran && showDua;
 
@@ -42,6 +52,17 @@ export function ContentSection() {
           </div>
         ) : null}
       </div>
+
+      {/* Tasbeeh card — full-width row below the Quran/Dua grid when "all", or centered when solo */}
+      {showTasbeeh ? (
+        <div
+          dir="rtl"
+          className="mx-auto mt-5 w-full min-w-0 max-w-2xl px-4 sm:mt-6 sm:px-6"
+        >
+          <TasbeehCard tasbeeh={tasbeeh} onNext={nextTasbeeh} />
+        </div>
+      ) : null}
     </section>
   );
 }
+
